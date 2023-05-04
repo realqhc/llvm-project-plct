@@ -894,7 +894,7 @@ void RISCVDAGToDAGISel::Select(SDNode *Node) {
       if (Subtarget->is64Bit())
         Opc = HasZdinx ? RISCV::COPY : RISCV::FMV_D_X;
       else
-        Opc = RISCV::FCVT_D_W;
+        Opc = HasZdinx ? RISCV::FCVT_D_W_IN32X : RISCV::FCVT_D_W;
       break;
     }
 
