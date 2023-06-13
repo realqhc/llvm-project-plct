@@ -752,6 +752,13 @@ def HasVendorXSfvcp : Predicate<"Subtarget->hasVendorXSfvcp()">,
                                 AssemblerPredicate<(all_of FeatureVendorXSfvcp),
                                 "'XSfvcp' (SiFive Custom Vector Coprocessor Interface Instructions)">;
 
+def FeatureVendorXCvmac
+    : SubtargetFeature<"xcvmac", "HasVendorXCvmac", "true",
+                       "'Xcvmac' (Multiply-Accumulate)">;
+def HasVendorXCvmac : Predicate<"Subtarget->hasVendorXCvmac()">,
+                                AssemblerPredicate<(all_of FeatureVendorXCvmac),
+                                "'Xcvmac' (Multiply-Accumulate)">;
+
 //===----------------------------------------------------------------------===//
 // LLVM specific features and extensions
 //===----------------------------------------------------------------------===//
